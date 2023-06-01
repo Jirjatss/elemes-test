@@ -19,18 +19,36 @@ export default {
       donat: Donat,
       modules: [Navigation, Autoplay],
       swiperInstance: null,
+      slidesPerView: 1,
     };
   },
   mounted() {
     this.$nextTick(() => {
       this.swiperInstance = this.$refs.swiper.swiper;
     });
+    this.updateSlidesPerView();
+    window.addEventListener("resize", this.updateSlidesPerView);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.updateSlidesPerView); // Hapus event listener saat komponen dihancurkan
   },
   methods: {
     onSwiper(swiper) {
       this.swiperInstance = swiper;
     },
     onSlideChange() {},
+    updateSlidesPerView() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1024) {
+        this.slidesPerView = 4; // 4 slide pada layar dengan lebar 1024px atau lebih besar
+      } else if (screenWidth >= 768) {
+        this.slidesPerView = 3; // 3 slide pada layar dengan lebar 768px atau lebih besar
+      } else if (screenWidth >= 640) {
+        this.slidesPerView = 2; // 2 slide pada layar dengan lebar 640px atau lebih besar
+      } else {
+        this.slidesPerView = 1; // 1 slide pada layar dengan lebar kurang dari 640px
+      }
+    },
   },
 
   components: {
@@ -49,12 +67,13 @@ export default {
     <div class="mt-10">
       <swiper
         :modules="modules"
-        :slides-per-view="4"
+        :slides-per-view="slidesPerView"
         :space-between="50"
         :autoplay="{
           delay: 3000,
           disableOnInteraction: false,
         }"
+        class="md:flex hidden"
       >
         <swiper-slide>
           <CardCategory product="Cupcake" jumlah="22 Items" :image="cupcake" backgroundColor="#F0FEEB" />
