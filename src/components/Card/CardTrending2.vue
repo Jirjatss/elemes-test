@@ -1,0 +1,59 @@
+<template>
+  <div class="text-start py-5 rounded-md px-5" :style="{ backgroundColor: backgroundColor }">
+    <img :src="image" alt="" class="m-start py-5 w-[114.73px] floating" />
+    <div class="grid grid-rows-3">
+      <h1 class="md:text-[26px] text-[10px] text-start floating">{{ product }}</h1>
+      <h1 class="md:text-[18px] text-[8px] text-[#8BAC3E] text-start floating">{{ category }}</h1>
+      <div class="rating floating">
+        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" />
+        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" checked />
+        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" checked />
+        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" />
+        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    product: {
+      type: String,
+      default: "",
+    },
+    category: {
+      type: String,
+      default: "",
+    },
+    backgroundColor: {
+      type: String,
+      default: "", // Warna latar belakang default
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+  },
+};
+</script>
+
+<style>
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 8px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+</style>
