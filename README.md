@@ -1,7 +1,10 @@
-# Vue 3 + Vite
+# **Dokumentasi Pembuatan Website Technicnal-test Elemes.id**
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Menggunakan Pustaka Javascript Vue
+  - Untuk Penginstalan sendiri menggunakan NPM
+## Menggunakan framework Tailwind CSS
+  - Agar dari segi tampilan membuat calon user tertarik
+## Menggunakan vue-router
+## Menggunakan beberapa dependencies guna tampilan UI yang menarik, seperti AOS, Sweetalert, DaisyUI, dan Swiper
+## Mendeploy menggunakan Netlify
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
