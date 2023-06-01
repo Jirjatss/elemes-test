@@ -6,35 +6,38 @@ import Pizaa from "../../assets/image/pizza.png";
 import Kebab from "../../assets/image/kebab.png";
 import Salmon from "../../assets/image/salmon.png";
 import Donat from "../../assets/image/doughnut.png";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-// Import Swiper Vue.js components
+import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 export default {
+  data() {
+    return {
+      cupcake: Cupcake,
+      pizza: Pizaa,
+      kebab: Kebab,
+      salmon: Salmon,
+      donat: Donat,
+      modules: [Navigation, Autoplay],
+      swiperInstance: null,
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.swiperInstance = this.$refs.swiper.swiper;
+    });
+  },
+  methods: {
+    onSwiper(swiper) {
+      this.swiperInstance = swiper;
+    },
+    onSlideChange() {},
+  },
+
   components: {
     Swiper,
     SwiperSlide,
     CardCategory,
     CardCategory2,
-  },
-  setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log("slide change");
-    };
-    return {
-      onSwiper,
-      onSlideChange,
-      modules: [Navigation, Pagination, Scrollbar, A11y],
-    };
   },
 };
 </script>
@@ -43,33 +46,36 @@ export default {
   <div class="bg-white md:px-16 px-8 md:-mt-20">
     <h1 class="md:text-[38px] text-[24px] text-black">Browser Our Category</h1>
     <h1 class="md:text-[38px] text-[24px] text-[#8BAC3E]">Receipt</h1>
-    <swiper :modules="modules" :slides-per-view="3" :space-between="50" navigation @swiper="onSwiper" @slideChange="onSlideChange">
-      <swiper-slide>
-        <CardCategory product="Cupcake" jumlah="22 Items" :image="Cupcake" backgroundColor="#F0FEEB" />
-      </swiper-slide>
-      <swiper-slide>
-        <CardCategory2 product="Pizza" jumlah="25 Items" :image="Pizaa" backgroundColor="#e1eff0" />
-      </swiper-slide>
-      <swiper-slide>
-        <CardCategory product="Kebab" jumlah="12 Items" :image="Kebab" backgroundColor="#EAEEFA" />
-      </swiper-slide>
-      <swiper-slide>
-        <CardCategory2 product="Salmon" jumlah="22 Items" :image="Salmon" backgroundColor="#F9EEF3" />
-      </swiper-slide>
-      <swiper-slide>
-        <CardCategory product="Doughnut" jumlah="11 Items" :image="Donat" backgroundColor="#F3F7D9" />
-      </swiper-slide>
-      ...
-    </swiper>
-    <!-- <div class="grid md:grid-cols-5 grid-cols-1 justify-center gap-2 gap-y-2 mt-10" data-aos="fade-up">
-      <CardCategory product="Cupcake" jumlah="22 Items" :image="Cupcake" backgroundColor="#F0FEEB" />
-      <CardCategory2 product="Pizza" jumlah="25 Items" :image="Pizaa" backgroundColor="#e1eff0" />
-      <CardCategory product="Kebab" jumlah="12 Items" :image="Kebab" backgroundColor="#EAEEFA" />
-      <CardCategory2 product="Salmon" jumlah="22 Items" :image="Salmon" backgroundColor="#F9EEF3" />
-      <CardCategory product="Doughnut" jumlah="11 Items" :image="Donat" backgroundColor="#F3F7D9" />
-    </div> -->
+    <div class="mt-10">
+      <swiper
+        :modules="modules"
+        :slides-per-view="4"
+        :space-between="50"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false,
+        }"
+      >
+        <swiper-slide>
+          <CardCategory product="Cupcake" jumlah="22 Items" :image="cupcake" backgroundColor="#F0FEEB" />
+        </swiper-slide>
+        <swiper-slide>
+          <CardCategory2 product="Pizza" jumlah="25 Items" :image="pizza" backgroundColor="#e1eff0" />
+        </swiper-slide>
+        <swiper-slide>
+          <CardCategory product="Kebab" jumlah="12 Items" :image="kebab" backgroundColor="#EAEEFA" />
+        </swiper-slide>
+        <swiper-slide>
+          <CardCategory2 product="Salmon" jumlah="22 Items" :image="salmon" backgroundColor="#F9EEF3" />
+        </swiper-slide>
+        <swiper-slide>
+          <CardCategory product="Doughnut" jumlah="11 Items" :image="donat" backgroundColor="#F3F7D9" />
+        </swiper-slide>
+        ...
+      </swiper>
+    </div>
     <div class="flex md:justify-end justify-center w-full py-2 gap-2 px-8 mt-5">
-      <button class="bg-[#8BAC3E] px-3 py-2 rounded-full flex gap-2">
+      <button class="bg-[#8BAC3E] px-3 py-2 rounded-full flex gap-2 wiper-button-prev" @click="onSwiper()">
         <img src="../../assets/image/prev.png" alt="" class="md:w-[33px] w-[15px] m-auto" />
         <span class="text-white m-auto md:text-[16px] text-[11px]">Prev</span>
       </button>
@@ -80,3 +86,5 @@ export default {
     </div>
   </div>
 </template>
+
+<style></style>

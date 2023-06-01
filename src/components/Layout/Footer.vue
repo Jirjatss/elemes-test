@@ -3,8 +3,10 @@
     <div class="md:ms-10 max-w-md">
       <img src="../../assets/image/logo.png" alt="" class="w-[207px]" />
       <a class="text-slate-600 font-thin text-[14px] mt-5">Jl. Prof. DR. Satrio No.7, RT.3/RW.3, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12950</a>
-      <div class="flex mt-2">
+      <div class="flex mt-2 gap-3">
         <button class="rounded-full"><img src="../../assets/image/email.png" alt="" class="w-[25px] h-[21.67px] text-white m-auto" /></button>
+        <button class="rounded-full"><img src="../../assets/image/phone.png" alt="" class="w-[25px] h-[21.67px] text-white m-auto" /></button>
+        <button class="rounded-full"><img src="../../assets/image/ig.png" alt="" class="w-[25px] h-[21.67px] text-white m-auto" /></button>
       </div>
     </div>
     <div>
