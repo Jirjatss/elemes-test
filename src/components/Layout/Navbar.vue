@@ -28,7 +28,7 @@
       </div>
       <div>
         <button type="" v-if="name" @click="keluar" class="bg-red-500 rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Log Out</button>
-        <a href="/register" v-else class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</a>
+        <router-link to="/register" v-else class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</router-link>
       </div>
       <!-- <div>
         <router-link v-if="name" @click="logout" class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Logout </router-link>
