@@ -27,8 +27,8 @@
         <router-link v-else to="/login" class="lg:flex hidden">Masuk</router-link>
       </div>
       <div>
-        <button v-if="getdata" @click="logout" class="bg-red-500 rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Log Out</button>
-        <button v-else class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</button>
+        <button type="" v-if="name" @click="keluar" class="bg-red-500 rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Log Out</button>
+        <a href="/register" v-else class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</a>
       </div>
       <!-- <div>
         <router-link v-if="name" @click="logout" class="bg-[#A4B441] rounded-3xl px-5 py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Logout </router-link>
@@ -47,8 +47,7 @@ export default {
     };
   },
   methods: {
-    logout(event) {
-      event.preventDefaut();
+    keluar() {
       Swal.fire({
         title: "Apakah Anda Yakin?",
         icon: "warning",
@@ -62,7 +61,7 @@ export default {
           localStorage.removeItem("UserLogin");
           this.name = "";
         }
-        this.$router.push("/");
+        this.$router.push("/login");
       });
     },
     getdata() {

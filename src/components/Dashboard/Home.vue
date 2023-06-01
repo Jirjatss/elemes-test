@@ -2,16 +2,16 @@
   <div class="bg-white pt-20" id="home">
     <div class="lg:flex justify-center grid-rows-2">
       <div class="w-full lg:flex md:py-20 py-10">
-        <div class="m-auto lg:px-16 px-10 -mt-4 lg:space-y-10 space-y-5">
-          <h1 class="md:text-[64px] text-3xl text-[#8BAC3E]" data-aos="fade-right" data-aos-once="true">Good Food Us</h1>
-          <h1 class="md:text-[64px] text-3xl text-[#8BAC3E]" data-aos="fade-right" data-aos-once="true">Good Mood</h1>
-          <div class="lg:flex py-3">
+        <div class="m-auto lg:px-16 px-10 -mt-4 gap-y-3">
+          <h1 class="md:text-[64px] text-[50px] text-[#8BAC3E]" data-aos="fade-right" data-aos-once="true">Good Food Us</h1>
+          <h1 class="md:text-[64px] text-[50px] text-[#8BAC3E]" data-aos="fade-right" data-aos-once="true">Good Mood</h1>
+          <div class="lg:flex py-3 md:flex hidden">
             <div class="grid grid-rows-2">
               <h1 class="md:text-[18px] text-[12px]" data-aos="fade-down" data-aos-once="true" data-aos-delay="300">
                 I would think that conserving our natural resources should be a conservative position: Not to waste food, and not to throw away a lot of the food that we buy.
               </h1>
               <div class="grid grid-cols-2 mt-5 gap-3 lg:w-1/2 items-start w-3/4" data-aos="fade-up" data-aos-once="true" data-aos-delay="700">
-                <button class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px]">Daftar Sekarang</button>
+                <button class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</button>
                 <button class="bg-slate-200 rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px]">About Us</button>
               </div>
             </div>
@@ -52,6 +52,17 @@
                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400 w-[10.66px]" />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-8 py-3 md:hidden flex mb-10">
+        <div class="grid grid-rows-2">
+          <h1 class="md:text-[18px] text-[12px]" data-aos="fade-down" data-aos-once="true" data-aos-delay="300">
+            I would think that conserving our natural resources should be a conservative position: Not to waste food, and not to throw away a lot of the food that we buy.
+          </h1>
+          <div class="grid grid-cols-2 mt-5 gap-3 lg:w-1/2 items-start w-3/4" data-aos="fade-up" data-aos-once="true" data-aos-delay="700">
+            <button class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</button>
+            <button class="bg-slate-200 rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px]">About Us</button>
           </div>
         </div>
       </div>
