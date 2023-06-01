@@ -11,7 +11,7 @@
                 I would think that conserving our natural resources should be a conservative position: Not to waste food, and not to throw away a lot of the food that we buy.
               </h1>
               <div class="grid grid-cols-2 mt-5 gap-3 lg:w-1/2 items-start w-3/4" data-aos="fade-up" data-aos-once="true" data-aos-delay="700">
-                <button class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</button>
+                <router-link to="/register" class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white text-center">Daftar Sekarang</router-link>
                 <button class="bg-slate-200 rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px]">About Us</button>
               </div>
             </div>
@@ -61,7 +61,7 @@
             I would think that conserving our natural resources should be a conservative position: Not to waste food, and not to throw away a lot of the food that we buy.
           </h1>
           <div class="grid grid-cols-2 mt-5 gap-3 lg:w-1/2 items-start w-3/4" data-aos="fade-up" data-aos-once="true" data-aos-delay="700">
-            <button class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white">Daftar Sekarang</button>
+            <router-link to="/register" class="bg-[#A4B441] rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px] text-white text-center">Daftar Sekarang</router-link>
             <button class="bg-slate-200 rounded-3xl py-3 lg:text-sm md:text-[14px] text-[10px]">About Us</button>
           </div>
         </div>
